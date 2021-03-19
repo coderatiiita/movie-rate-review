@@ -38,6 +38,7 @@ router.post('/ratingandreview/add', auth.authenticate,(req, res) => {
 
 router.get('/ratingandreview/:movieId', (req, res) => {
     const movieId = req.params.movieId;
+    console.log(movieId);
     RatingsAndReviews.find({movieId})
     .then(data => {
         console.log(data);
