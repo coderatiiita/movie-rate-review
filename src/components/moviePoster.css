@@ -1,0 +1,22 @@
+.Movie-Page-Main-Container{
+    width: 100hw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    opacity: 50%;
+}
+
+
+.movie-detail-container{
+    display: flex;
+    flex-direction: row;
+    margin: 5vh;
+    column-gap: 5vh;
+}
+
+.poster img{
+    width: 50hw;
+    height: 60vh;
+    border-radius: 2vh;
+    opacity: 100%;
+}
