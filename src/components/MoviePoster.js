@@ -13,7 +13,7 @@ var divImage = {
   };
 
 
-const Movie = () => 
+const MoviePoster = () => 
 (
 <div className="Movie-Page-Main-Container"  style={divImage}>
     <div className="movie-detail-container">
@@ -46,4 +46,4 @@ const Movie = () =>
 </div>
 );
 
-export default Movie;
+export default MoviePoster;

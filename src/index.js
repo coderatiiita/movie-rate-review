@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import LoginPage from './LoginPage';
+import Home from './Home.js';
+import MoviePoster from './components/MoviePoster.js'
 import Profile from './Profile';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 

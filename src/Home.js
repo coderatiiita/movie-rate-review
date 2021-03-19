@@ -1,8 +1,9 @@
 import React,{useEffect,useState} from 'react';
 import Movie from './components/Movie';
 
-const FEATURED_API = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=687f4af88c405c0b881295bba3d4adfc&page=1";
-const IMG_API = "https://image.tmdb.org/t/p/w1280";
+// const FEATURED_API = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=687f4af88c405c0b881295bba3d4adfc&page=1";
+// const IMG_API = "https://image.tmdb.org/t/p/w1280";
+const homeapi= "http://localhost:4000/api/movies/all";
 const SEARCH_API ="https://api.themoviedb.org/3/search/movie?&api_key=687f4af88c405c0b881295bba3d4adfc&query=f";
 
 function Home() {
@@ -13,7 +14,7 @@ function Home() {
   // whenever we change movies, the map function runs on jo jo value hai list mein , i.e whatever movies it has 
 
   useEffect(()=>{
-    getMovies(FEATURED_API);
+    getMovies(homeapi);
   },[]);
 
   const getMovies = (API) =>{
