@@ -1,10 +1,11 @@
 import React,{useEffect,useState} from 'react';
 import Movie from './components/Movie';
+import axios from  'axios';
 
 // const FEATURED_API = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=687f4af88c405c0b881295bba3d4adfc&page=1";
 // const IMG_API = "https://image.tmdb.org/t/p/w1280";
-const homeapi= "http://localhost:4000/api/movies/all";
-const SEARCH_API ="https://api.themoviedb.org/3/search/movie?&api_key=687f4af88c405c0b881295bba3d4adfc&query=f";
+const homeapi= "/api/movies/all";
+// const SEARCH_API ="https://api.themoviedb.org/3/search/movie?&api_key=687f4af88c405c0b881295bba3d4adfc&query=f";
 
 function Home() {
   const [ movies, setMovies] = useState([]);
@@ -17,20 +18,18 @@ function Home() {
     getMovies(homeapi);
   },[]);
 
+
   const getMovies = (API) =>{
-      fetch(API)
-      .then((res)=> res.json())
-      .then((data)=>{
-        console.log(data);
-        setMovies(data.results);
-      });
-  };
+    axios(API)
+    .then((res)=>{setMovies(res.data);console.log(res.data);})
+    
+};
 
 const handleOnSubmit = (e) => {
   e.preventDefault();
   if (searchTerm){
 
-    getMovies(SEARCH_API + searchTerm)
+    // getMovies(SEARCH_API + searchTerm)
     setSearchTerm("");
 
   }
@@ -47,7 +46,7 @@ const handleOnChange = (e) => {
   return (
     <> 
      {/* have modified root class in index.html */}
-     <div class="root">
+     <div className="root">
          <div className="Main-Poster">
              <p>Movie Rating App</p>
          </div>

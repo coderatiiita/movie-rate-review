@@ -1,17 +1,26 @@
 .Movie-Page-Main-Container{
     width: 100hw;
-    height: 100vh;
+    height: 70vh;
     background-size: cover;
     background-position: center;
-    opacity: 50%;
+    /* opacity: 50%; */
+    margin: 5vh;
 }
 
 
 .movie-detail-container{
     display: flex;
     flex-direction: row;
-    margin: 5vh;
+    margin-top: 5vh;
     column-gap: 5vh;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    /* margin-top: 10vh;
+    background-color: antiquewhite;
+    margin-top: 20vh; */
+    background: rgb(0, 0, 0);/* Fallback color */
+    background: rgba(0, 0, 0, 0.5);/* Black background with opacity */
 }
 
 .poster img{
@@ -19,4 +28,18 @@
     height: 60vh;
     border-radius: 2vh;
     opacity: 100%;
+    margin-top: 5vh;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.description-movie{
+    
+} 
+
+.feedback-main-conatiner{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 5vh;
 }
