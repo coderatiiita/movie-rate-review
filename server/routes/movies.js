@@ -7,14 +7,14 @@ const auth = require('../middlewares/auth');
 router.get('/', (req, res) => {
     Movie.find({})
     .then(movies => {
-        res.send(movies);
+        res.status(200).send(movies);
     })
     .catch(() => {
         res.status(500).send({ error: "Internal Server Error" });
     });
 });
 
-router.post('/ratingandreview/', auth.authenticate,(req, res) => {
+router.post('/ratingandreview/', auth.authenticate, (req, res) => {
     const {movieId, review, rating} = req.body;
     const userId = req.session.userId
     const ratingandreview = new RatingAndReview({userId, movieId, review, rating});
@@ -32,7 +32,7 @@ router.post('/ratingandreview/', auth.authenticate,(req, res) => {
             });
         }
     }).catch((err) => {
-        res.status(200).send({ error: "Internal Server Error", err});
+        res.status(500).send({ error: "Internal Server Error", err});
     });
 });
 
@@ -60,6 +60,16 @@ router.get('/ratingandreview/:movieId', auth.authenticate, (req, res) => {
     })
     .catch(err => {
         res.status(404).send({success: false, err});
+    });
+});
+
+router.get('/search/', auth.authenticate, (req, res) => {
+    const movieTitle = req.body.movie_title;
+    Movie.find({'original_title': {'$regex': `.*${movieTitle}.*`, '$options' : 'i'}})
+    .then(movies => {
+        res.status(200).send(movies);
+    }).catch(err => { 
+        res.status(500).send({ error: "Internal Server Error" }); 
     });
 });
 
