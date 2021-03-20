@@ -1,9 +1,28 @@
 .feedback-container{
     width: 30vh;
     height: 20vh;
-    background-color: white;
+    background-color: #373b69;
+    color:white;
+    border-radius: 2vh;
+    margin-top: 2vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5vh;
 }
-
 .username-feedback{
     color: black;
+}
+
+.user-icon{
+    float: left; 
+  /* padding: 12px; */
+  color: white;
+  /* text-decoration: none;  */
+  font-size: 10px;
+
+}
+.fa_custom{
+    color: gold;
+    margin-right: 2vh;
 }

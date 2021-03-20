@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from 'react';
 import Movie from './components/Movie';
+import Navbar from './components/Navbar.js'
 import axios from  'axios';
 
 // const FEATURED_API = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=687f4af88c405c0b881295bba3d4adfc&page=1";
@@ -47,9 +48,7 @@ const handleOnChange = (e) => {
     <> 
      {/* have modified root class in index.html */}
      <div className="root">
-         <div className="Main-Poster">
-             <p>Movie Rating App</p>
-         </div>
+         <Navbar/>
             <header>
                 <form onSubmit={handleOnSubmit}>
                 <input className="search" type="text"

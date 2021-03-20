@@ -1,23 +1,29 @@
 import React,{useEffect,useState} from 'react';
 import axios from  'axios';
+import { Link } from 'react-router-dom';
 import './feedback.css'
 
-const Feedback = ({user,review,rating}) => 
+const Feedback = (props) =>
 (
  <>
+    
     <div className="feedback-container">
-        <div className="username-feedback">
+        {/* <img className="user-icon" src="./user.png" alt="userpic"></img> */}
+        <Link to="/" className="Login"><i class="fa fa-fw fa-user"></i> User</Link>
+        {/* <div className="username-feedback">
             user
-        </div>
+        </div> */}
         <div className="review-feedback">
-            {review}
+            {props.feedback.review}
         </div>
         <div className="rating-feedback">
-            {rating}
+        <i class="fa fa-star fa_custom fa"></i>
+        <span>{props.feedback.rating}</span>
+            
         </div>
-
     </div>
  </>
 );
 
 export default Feedback;
+

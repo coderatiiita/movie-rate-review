@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from  'axios';
 import Feedback from './Feedback.js';
-
+import Navbar from './Navbar.js'
+import './moviePoster.css'
 class MoviePage extends React.Component {
     constructor(props) {
         super(props);
@@ -20,50 +21,52 @@ class MoviePage extends React.Component {
     
     
     render() {
-        // const repos = this.state.developer.repos
-        // const movieData = this.state.movieDetails.movieData;
-        // const feedbacks = this.state.movieDetails.ratingsandreviews;
-        // const image_background = "http://image.tmdb.org/t/p/w780/"+this.state.movieDetails.movieData.backdrop_path;
-        // const title = movieData.original_title;
-        // const description="Long ago, in the fantasy world of Kumandra, humans and dragons lived together in harmony. But when an evil fo";
-        // const movieposter = "http://image.tmdb.org/t/p/w780/"+movieData.poster_path;
-        // const rating= movieData.vote_average;
-        // const totalVotes = movieData.vote_count;
-        // var divImage = {
-        //     backgroundImage : 'url(' + image_background + ')'
-        //   };
+        const image_background = "http://image.tmdb.org/t/p/w780/"+this.state.movieDetails.backdrop_path;
+        var divImage = {
+            backgroundImage : 'url(' + image_background + ')'
+          };
         console.log(this.state.ratings);
         return (
             <>
             {/* <p>{this.state.movieDetails.original_title}</p> */}
+            <Navbar/>
+            <div className="Movie-Page-Main-Container"  style={divImage}>
                 <div className="movie-detail-container">
                     {/* <div className="poster">
                         <img src={movieposter} alt={title}/>
                     </div> */}
+                    <div className="poster">
+                        <img src={"http://image.tmdb.org/t/p/w780/"+this.state.movieDetails.poster_path} alt ="this.state.movieDetails.title"/>
+                    </div>
                     <div className="description-movie">
-                        <h1>{this.state.movieDetails.original_title}</h1>
+                        <p className="title-movie">{this.state.movieDetails.original_title}</p>
 
                         <div>
-                            <h3>PLOT</h3>
-                            <p>{this.state.movieDetails.original_title}</p>
+                            <p className="plot-heading">PLOT</p>
+                            <p>{this.state.movieDetails.overview}</p>
                         </div>
 
                         <div>
-                            <h3>RATING</h3>
-                            <p>{this.state.movieDetails.original_title}</p>
+                            <p className="rating-head">RATING</p>
+                            <i class="fa fa-star fa_custom fa-2x"></i>
+                            <span>{this.state.movieDetails.vote_average}</span>
                         </div>
 
                         <div>
-                            <h3>TOTAL VOTES</h3>
-                            <p>{this.state.movieDetails.original_title}</p>
+                            <p className="votes-head">TOTAL VOTES</p>
+                            <p>{this.state.movieDetails.vote_count}</p>
                         </div>
 
                     </div>
                 </div>
-
-                <div className="feedback-main-conatiner">
-                    {this.state.ratings.length>0 && this.state.ratings.map(feedback =>(<Feedback key={feedback.id} {...this.state.ratings}  />))}
+                <div>
+                    <p className="review-header">{this.state.ratings.length>0?"REVIEWS":"ADD A REVIEW"}</p>
                 </div>
+                <div className="feedback-main-conatiner">
+                    {this.state.ratings.length>0 && this.state.ratings.map(feedback =>(<Feedback key={feedback.id} feedback={feedback}  />))}
+                </div>
+
+            </div>
 
 
             </>
