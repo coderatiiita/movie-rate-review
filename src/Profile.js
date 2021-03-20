@@ -7,7 +7,7 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-      fetch('/api/users/me').then(user => {
+      fetch('http://localhost:4000/api/users/me').then(user => {
         if (user.status !== 200) {
           window.location = '/';
         }
@@ -24,7 +24,7 @@ class Profile extends React.Component {
   
   onUpdate = () => {
     const { firstName, lastName } = this.state;
-    fetch('/api/users/me', {
+    fetch('http://localhost:4000/api/users/me', {
       method: 'PUT',
       body: JSON.stringify({ firstName, lastName }),
       headers: {
@@ -38,7 +38,7 @@ class Profile extends React.Component {
   }
 
   onLogout = () => {
-    fetch('/api/sessions/me', {
+    fetch('http://localhost:4000/api/sessions/me', {
       method: 'DELETE'
     }).then(res => {
       if (res.status === 204) {

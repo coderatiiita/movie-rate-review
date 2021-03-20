@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "./LoginPage.css"
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
@@ -10,9 +10,9 @@ class LoginPage extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/api/users/me').then(user => {
+    fetch('http://localhost:4000/api/users/me').then(user => {
       if (user.status === 200) {
-        window.location = '/profile';
+        window.location = '/movies';
       }
     });
   }
@@ -24,7 +24,7 @@ class LoginPage extends React.Component {
   onLoginClick = e => {
     e.preventDefault();
     const { email, password } = this.state;
-    fetch('/api/sessions', {
+    fetch('http://localhost:4000/api/sessions', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: {
@@ -32,7 +32,7 @@ class LoginPage extends React.Component {
       }
     }).then(res => {
       if (res.status === 204) {
-        window.location = '/profile';
+        window.location = '/movie';
       }
     });
   }
@@ -40,7 +40,7 @@ class LoginPage extends React.Component {
   onSignupClick = e => {
     e.preventDefault();
     const { email, password } = this.state;
-    fetch('/api/users', {
+    fetch('http://localhost:4000/api/users', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: {
@@ -51,13 +51,14 @@ class LoginPage extends React.Component {
 
   render() {
     return (
-      <div className="LoginPage">
-        <form>
-          <input placeholder="email" name="email" required type="email" onInput={this.onInput} value={this.state.email}></input>
-          <input placeholder="password" name="password" required type="password" onInput={this.onInput} value={this.state.password}></input>
-          <div>
-            <input type="submit" onClick={this.onLoginClick} value="Login"></input>
-            <input type="submit" onClick={this.onSignupClick} value="Sign up"></input>
+      <div className="Login">
+        <p className="spanStyle">Movie Rating </p>
+        <form className="formStyle">
+          <input className="InputStyle" placeholder="email" name="email" required type="email" onInput={this.onInput} value={this.state.email}></input>
+          <input className="InputStyle" placeholder="password" name="password" required type="password" onInput={this.onInput} value={this.state.password}></input>
+          <div className="buttonDiv">
+            <input className="inputButton" type="submit" onClick={this.onLoginClick} value="Login"></input>
+            <input className="inputButton" type="submit" onClick={this.onSignupClick} value="Sign up"></input>
           </div>
         </form>
       </div>
