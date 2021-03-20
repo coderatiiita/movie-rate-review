@@ -4,6 +4,7 @@ import './index.css';
 import LoginPage from './LoginPage';
 import Home from './Home.js';
 import MoviePoster from './components/MoviePoster.js'
+import MoviePage from './components/MoviePage.js'
 import Profile from './Profile';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/" component={LoginPage} />
           <Route exact path = "/home" component = {Home} />
           <Route exact path = "/movie" component = {MoviePoster} />
+          <Route exact path="/movies/:movieId" component={MoviePage} />
           <Route exact path="/profile" component={Profile} />
         </Switch>
     </Router>
