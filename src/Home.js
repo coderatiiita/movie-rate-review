@@ -4,8 +4,8 @@ import axios from  'axios';
 
 // const FEATURED_API = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=687f4af88c405c0b881295bba3d4adfc&page=1";
 // const IMG_API = "https://image.tmdb.org/t/p/w1280";
-const homeapi= "/api/movies/all";
-// const SEARCH_API ="https://api.themoviedb.org/3/search/movie?&api_key=687f4af88c405c0b881295bba3d4adfc&query=f";
+const homeapi= "/api/movies/";
+const SEARCH_API ="http://localhost:4000/api/movies/search/";
 
 function Home() {
   const [ movies, setMovies] = useState([]);
@@ -29,7 +29,7 @@ const handleOnSubmit = (e) => {
   e.preventDefault();
   if (searchTerm){
 
-    // getMovies(SEARCH_API + searchTerm)
+    getMovies(SEARCH_API + searchTerm)
     setSearchTerm("");
 
   }
@@ -59,7 +59,7 @@ const handleOnChange = (e) => {
             </header>
             
 
-            <div class="movie-container">
+            <div className="movie-container">
                 {movies.length>0 && movies.map(movie =>(<Movie key={movie.id} {...movie}  />))}
             </div>
 
