@@ -1,18 +1,19 @@
 import React from 'react';
 import axios from  'axios';
 import Feedback from './Feedback.js';
+import Review from "./Review.js"
 
 class MoviePage extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {movieDetails:{},ratings:{}};
+        this.state = {movieDetails:{},ratings:{},show:false};
     }
 
     componentDidMount() {
         axios.get(`/api/movies/ratingandreview/${this.props.match.params.movieId}`)
         .then(response => {
             console.log(response);
-            this.setState({movieDetails: response.data.movieData,ratings:response.data.ratingsandreviews});
+            this.setState(prevState=>({...prevState,movieDetails: response.data.movieData,ratings:response.data.ratingsandreviews}));
         })
     }
 
@@ -37,9 +38,9 @@ class MoviePage extends React.Component {
             <>
             {/* <p>{this.state.movieDetails.original_title}</p> */}
                 <div className="movie-detail-container">
-                    {/* <div className="poster">
-                        <img src={movieposter} alt={title}/>
-                    </div> */}
+                    <div className="poster">
+                        <img src={"http://image.tmdb.org/t/p/w780/"+this.state.movieDetails.poster_path} />
+                    </div>
                     <div className="description-movie">
                         <h1>{this.state.movieDetails.original_title}</h1>
 
@@ -62,18 +63,11 @@ class MoviePage extends React.Component {
                 </div>
 
                 <div className="feedback-main-conatiner">
-                    {this.state.ratings.length>0 && this.state.ratings.map(feedback =>(<Feedback key={feedback.id} {...this.state.ratings}  />))}
+                    {this.state.ratings.length>0 && this.state.ratings.map(feedback =>(<Feedback key={feedback.id} feedback={feedback}  />))}
                 </div>
-
-
+                <button onClick={()=>(this.setState(prevState=>({...prevState,show:!prevState.show})))}>Add Review</button>
+                {this.state.show?<Review movieId={this.props.match.params.movieId}/>:null}
             </>
-
-
-
-        
-
-
-
         );
 
     }

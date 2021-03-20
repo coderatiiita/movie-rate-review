@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react';
 import axios from  'axios';
 import './feedback.css'
 
-const Feedback = ({user,review,rating}) => 
+const Feedback = (props) => 
 (
  <>
     <div className="feedback-container">
@@ -10,10 +10,10 @@ const Feedback = ({user,review,rating}) =>
             user
         </div>
         <div className="review-feedback">
-            {review}
+            {props.feedback.review}
         </div>
         <div className="rating-feedback">
-            {rating}
+            {props.feedback.rating}
         </div>
 
     </div>

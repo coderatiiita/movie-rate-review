@@ -12,7 +12,8 @@ class LoginPage extends React.Component {
   componentDidMount() {
     fetch('http://localhost:4000/api/users/me').then(user => {
       if (user.status === 200) {
-        window.location = '/movies';
+        console.log(user);
+        window.location = '/home';
       }
     });
   }
@@ -32,7 +33,7 @@ class LoginPage extends React.Component {
       }
     }).then(res => {
       if (res.status === 204) {
-        window.location = '/movie';
+        window.location = '/home';
       }
     });
   }
