@@ -36,7 +36,7 @@ router.post('/ratingandreview/', auth.authenticate, (req, res) => {
     });
 });
 
-router.get('/ratingandreview/:movieId', auth.authenticate, (req, res) => {
+router.get('/ratingandreview/:movieId', (req, res) => {
     const movieId = req.params.movieId;
     RatingAndReview.find({movieId})
     .then(reviews => {
@@ -63,7 +63,7 @@ router.get('/ratingandreview/:movieId', auth.authenticate, (req, res) => {
     });
 });
 
-router.get('/search/', auth.authenticate, (req, res) => {
+router.get('/search/', (req, res) => {
     const movieTitle = req.body.movie_title;
     Movie.find({'original_title': {'$regex': `.*${movieTitle}.*`, '$options' : 'i'}})
     .then(movies => {
