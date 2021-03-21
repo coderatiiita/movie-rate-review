@@ -3,10 +3,12 @@ import axios from  'axios';
 import Feedback from './Feedback.js';
 import Navbar from './Navbar.js'
 import './moviePoster.css'
+import Review from "./Review.js"
+
 class MoviePage extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {movieDetails:{},ratings:{}};
+        this.state = {movieDetails:{},ratings:{},show:false};
     }
 
     componentDidMount() {
@@ -65,7 +67,7 @@ class MoviePage extends React.Component {
                 <div className="feedback-main-conatiner">
                     {this.state.ratings.length>0 && this.state.ratings.map(feedback =>(<Feedback key={feedback.id} feedback={feedback}  />))}
                 </div>
-
+                <Review movieId={this.props.match.params.movieId}/>
             </div>
 
 

@@ -1,0 +1,59 @@
+.mainDiv{
+    justify-content:center;
+    width:100%;
+    margin:auto;
+    padding-left:0%;
+    padding-right:0%;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    background-color: #373b69;
+}
+
+.mainForm{
+    margin-left:5%;
+    margin-right:5%;
+}
+
+.inputMain{
+    width:100%;
+    height:70px;
+}
+.spanReview{
+    padding:10px;
+    padding-left: 0px;
+}
+
+.selectReview{
+    width: 40px;
+    height:40px;
+}
+.reviewButton{
+    padding:10px;
+    margin: auto;
+    background-color: whitesmoke;
+}
+.reviewDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+@media only screen and (max-width: 600px) {
+    .mainDiv{
+        justify-content:center;
+        width:85%;
+        padding-left:0;
+        padding-right:0;
+        margin: auto;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .mainDiv{
+        justify-content:center;
+        width:100%;
+        padding-left:0%;
+        padding-right:0%;
+        margin: 0;
+    }
+}
