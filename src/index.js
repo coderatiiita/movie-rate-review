@@ -15,8 +15,9 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route exact path="/" component={LoginPage} />
-          <Route exact path = "/home" component = {Home} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={LoginPage} />
+          {/* <Route exact path = "/home" component = {Home} /> */}
           {/* <Route exact path = "/movie" component = {MoviePoster} /> */}
           <Route exact path="/movies/:movieId" component={MoviePage} />
           <Route exact path="/profile" component={Profile} />

@@ -27,7 +27,7 @@ class Review extends React.Component {
     const { review, rating, movieId } = this.state;
     fetch('/api/users/me').then(user => {
       if (user.status !== 200) {
-        window.location = '/';
+        window.location = '/login';
         console.log(user);
       }
       return user.json();
