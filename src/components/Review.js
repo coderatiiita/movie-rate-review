@@ -50,27 +50,27 @@ class Review extends React.Component {
   render() {
     return (
       <div className="mainDiv">
-        <h2 style={{textAlign:"center"}}>Add Reviews </h2>
-        <form className="mainForm">
-          <div style={{marginBottom:"10px"}}>
-            <span className="spanReview">Review</span>  
-            <input className="inputMain" placeholder="review" name="review" required type="text" onInput={this.onInput} value={this.state.review}></input>    
-          </div>  
-          <div style={{marginBottom:"10px"}}>
-            <span className="spanReview">Rating</span>
-            {/* <input className="inputMain" placeholder="rating" name="rating" required type="number" min="1" max="5" onInput={this.onInput} value={this.state.rating}></input> */}
-            <select className="selectReview" name="rating" type="number" value={this.state.rating} onChange={this.onInput}>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-          </div>
-          <div className="reviewDiv">
-            <input className="reviewButton" type="submit" onClick={this.onSubmit} value="Submit"></input>
-          </div>
-        </form>
+        <p className="review-header">ADD  REVIEW </p>
+          <form className="mainForm">
+              <div style={{marginBottom:"10px"}}>
+                  <span className="spanReview">Review</span>  
+                  <input className="inputMain" placeholder="What do you feel about this movie?" name="review" required type="text" onInput={this.onInput} value={this.state.review}></input>    
+              </div>  
+              <div style={{marginBottom:"10px"}}>
+                  <span className="spanReview">Rating</span>
+                  {/* <input className="inputMain" placeholder="rating" name="rating" required type="number" min="1" max="5" onInput={this.onInput} value={this.state.rating}></input> */}
+                  <select className="selectReview" name="rating" type="number" value={this.state.rating} onChange={this.onInput}>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                  </select>
+              </div>
+              <div className="reviewDiv">
+                  <input className="reviewButton" type="submit" onClick={this.onSubmit} value="Submit"></input>
+              </div>
+          </form>
       </div>
     );
   }
