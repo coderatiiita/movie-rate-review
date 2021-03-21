@@ -5,7 +5,8 @@
 }
 
 .feedback-container{
-    width: 70vw;
+    width: 40vh;
+    height: 30vh;
     background-color: #373b69;
     color:white;
     border-radius: 2vh;
@@ -14,7 +15,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 1.5vh;
-    padding: 10px;
+    margin-bottom: 5vh;
 }
 .username-feedback{
     color: black;
@@ -34,3 +35,21 @@
     color: gold;
     margin-right: 2vh;
 }
+
+.feedback-text{
+    display: flex;
+    flex-direction: column ;
+    /* background-color: rgb(34, 54, 3); */
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+    height: 28vh;
+    border-radius: 2vh;
+    background: rgb(0, 0, 0);/* Fallback color */
+        background: rgba(0, 0, 0, 0.5);/* Black background with opacity */
+}
+
+/* .review-title{
+    font-size: 5vh;
+} */

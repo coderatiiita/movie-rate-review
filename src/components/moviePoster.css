@@ -55,7 +55,7 @@
 
 .feedback-main-conatiner{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     column-gap: 5vh;
     align-items: center;
