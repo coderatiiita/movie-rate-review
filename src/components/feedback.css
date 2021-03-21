@@ -17,9 +17,11 @@
 .user-icon{
     float: left; 
   /* padding: 12px; */
-  color: white;
+    color: white;
   /* text-decoration: none;  */
-  font-size: 10px;
+    font-size: 10px;
+    width: 4em;
+    height: 4em;
 
 }
 .fa_custom{
