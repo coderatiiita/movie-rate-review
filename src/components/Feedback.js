@@ -5,10 +5,9 @@ import './feedback.css'
 
 const Feedback = (props) =>
 (
- <>
-    
+ <>    
     <div className="feedback-container">
-        <img className="user-icon" src="../user.png" alt="userpic"></img>
+        <img className="user-icon" src={"https://robohash.org/test="+props.feedback.review} alt="userpic"></img>
         <Link to="/" className="Login"><i class="fa fa-fw fa-user"></i> User</Link>
         {/* <div className="username-feedback">
             user
