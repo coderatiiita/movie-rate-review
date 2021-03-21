@@ -2,7 +2,7 @@ import React from 'react';
 import axios from  'axios';
 import Feedback from './Feedback.js';
 import Navbar from './Navbar.js'
-import './moviePoster.css'
+//import './moviePoster.css'
 import Review from "./Review.js"
 
 class MoviePage extends React.Component {
@@ -15,8 +15,12 @@ class MoviePage extends React.Component {
         axios.get(`/api/movies/ratingandreview/${this.props.match.params.movieId}`)
         .then(response => {
             console.log(response);
-            this.setState({movieDetails: response.data.movieData,ratings:response.data.ratingsandreviews});
-        })
+            this.setState({
+                movieDetails: response.data.movieData, 
+                ratings:response.data.ratingsandreviews,
+                avgRating: response.data.avgRating
+            });
+        });
     }
 
 
@@ -26,7 +30,7 @@ class MoviePage extends React.Component {
         const image_background = "http://image.tmdb.org/t/p/w780/"+this.state.movieDetails.backdrop_path;
         var divImage = {
             backgroundImage : 'url(' + image_background + ')'
-          };
+        };
         console.log(this.state.ratings);
         return (
             <>
@@ -51,7 +55,7 @@ class MoviePage extends React.Component {
                         <div>
                             <p className="rating-head">RATING</p>
                             <i class="fa fa-star fa_custom fa-2x"></i>
-                            <span>{this.state.movieDetails.vote_average}</span>
+                            <span>{Math.round(this.state.avgRating * 10) / 10}</span>
                         </div>
 
                         <div>

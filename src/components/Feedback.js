@@ -5,8 +5,7 @@ import './feedback.css'
 
 const Feedback = (props) =>
 (
- <>
-    
+ <>    
     <div className="feedback-container">
         <div className="feedback-text">
             {/* <img className="user-icon" src="../user.png" alt="userpic"></img> */}
