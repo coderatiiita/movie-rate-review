@@ -13,7 +13,7 @@ class LoginPage extends React.Component {
     fetch('/api/users/me').then(user => {
       if (user.status === 200) {
         console.log(user);
-        window.location = '/home';
+        window.location = '/';
       }
     });
   }
@@ -33,7 +33,7 @@ class LoginPage extends React.Component {
       }
     }).then(res => {
       if (res.status === 204) {
-        window.location = '/home';
+        window.location = '/';
       }
     });
   }
