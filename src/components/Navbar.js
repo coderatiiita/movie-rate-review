@@ -6,7 +6,7 @@ class Navbar extends React.Component{
    constructor(props) {
       super(props);
       this.state = {
-       change:false,
+       change:"",
        user:{}
       };
    }
@@ -27,6 +27,7 @@ class Navbar extends React.Component{
         method: 'DELETE'
       }).then(res => {
         if (res.status === 204) {
+         window.location="/";
          this.setState({change:false});
         }
       });
@@ -41,7 +42,7 @@ class Navbar extends React.Component{
          <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
          <a href="#"><i class="fa fa-fw fa-user"></i> Login</a> */}
          {this.state.change==false?<Link to="/login" className="Login"><i class="fa fa-fw fa-user"></i> SignIn</Link>:null}
-         {this.state.change==true?<Link to="/" className="Login" onClick={this.onLogout}><i class="fa fa-fw fa-user"></i> SignOut</Link>:null}
+         {this.state.change==true?<Link to="" className="Login" onClick={this.onLogout}><i class="fa fa-fw fa-user"></i> SignOut</Link>:null}
          </div>
       </>
       )
