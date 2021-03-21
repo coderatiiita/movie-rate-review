@@ -28,10 +28,12 @@ class MoviePage extends React.Component {
     
     render() {
         const image_background = "http://image.tmdb.org/t/p/w780/"+this.state.movieDetails.backdrop_path;
+        const image_poster = "http://image.tmdb.org/t/p/w780"+this.state.movieDetails.poster_path;
         var divImage = {
             backgroundImage : 'url(' + image_background + ')'
         };
         console.log(this.state.ratings);
+        console.log(image_poster);
         return (
             <>
             {/* <p>{this.state.movieDetails.original_title}</p> */}
@@ -42,7 +44,8 @@ class MoviePage extends React.Component {
                         <img src={movieposter} alt={title}/>
                     </div> */}
                     <div className="poster">
-                        <img src={"http://image.tmdb.org/t/p/w780/"+this.state.movieDetails.poster_path} alt ="this.state.movieDetails.title"/>
+                        <img src={image_poster} alt ="this.state.movieDetails.title"/>
+                        {/* <img src={"https://image.tmdb.org/t/p/w780"+this.state.movieDetails.poster_path} alt ="this.state.movieDetails.title"/> */}
                     </div>
                     <div className="description-movie">
                         <p className="title-movie">{this.state.movieDetails.original_title}</p>
