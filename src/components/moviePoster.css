@@ -1,0 +1,136 @@
+.Movie-Page-Main-Container{
+    width: 100hw;
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    /* opacity: 50%; */
+    margin: 5vh;
+    border-radius: 2vh;
+}
+
+.plot-heading,
+.rating-head,
+.votes-head{
+    font-size: 2.5vh;
+    font-weight: bold;
+}
+
+.title-movie{
+
+    font-size: 4.5vh;
+    font-weight: bold;
+}
+
+
+.movie-detail-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5vh;
+    column-gap: 5vh;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    /* margin-top: 10vh;
+    background-color: antiquewhite;
+    margin-top: 20vh; */
+    background: rgb(0, 0, 0);/* Fallback color */
+    background: rgba(0, 0, 0, 0.5);/* Black background with opacity */
+}
+
+.poster img{
+    width: 50hw;
+    height: 60vh;
+    border-radius: 2vh;
+    opacity: 100%;
+    margin-top: 5vh;
+    margin-left: 2vh;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.description-movie{
+    margin-right: 2vh;
+    
+} 
+
+.feedback-main-conatiner{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 5vh;
+}
+
+.review-header{
+    text-align: center;
+    font-size: 3vh;
+    font-weight: bold;
+}
+.fa_custom{
+    color: gold;
+    margin-right: 2vh;
+}
+
+@media screen and (max-width: 980px){
+    .movie-detail-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Movie-Page-Main-Container{
+        width: 100hw;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        /* opacity: 50%; */
+        margin: 5vh;
+        border-radius: 2vh;
+    }
+
+    .movie-detail-container{
+        display: flex;
+        flex-direction: column;
+        margin-top: 5vh;
+        column-gap: 5vh;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        /* margin-top: 10vh;
+        background-color: antiquewhite;
+        margin-top: 20vh; */
+        background: rgb(0, 0, 0);/* Fallback color */
+        background: rgba(0, 0, 0, 0.5);/* Black background with opacity */
+    }
+    
+    .poster img{
+        width: 50hw;
+        height: 30vh;
+        border-radius: 2vh;
+        opacity: 100%;
+        margin-top: 3vh;
+        margin-left: 2vh;
+        /* align-items: center;
+        justify-content: center; */
+    }
+
+    .description-movie{
+        margin-right: 2vh;
+        margin-left: 2vh;
+        font-size: 2vh;
+    } 
+
+    .title-movie{
+
+        font-size: 3vh;
+        font-weight: bold;
+    }
+
+    
+.feedback-main-conatiner{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+}
