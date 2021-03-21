@@ -43,7 +43,7 @@ class MoviePage extends React.Component {
                         <img src={movieposter} alt={title}/>
                     </div> */}
                     <div className="poster">
-                        <img src={"https://image.tmdb.org/t/p/w780/"+this.state.movieDetails.poster_path} alt ="this.state.movieDetails.title"/>
+                        <img src={"https://image.tmdb.org/t/p/w780"+this.state.movieDetails.poster_path} alt ="this.state.movieDetails.title"/>
                     </div>
                     <div className="description-movie">
                         <p className="title-movie">{this.state.movieDetails.original_title}</p>
