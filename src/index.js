@@ -2,8 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import LoginPage from './LoginPage';
+import Home from './Home.js';
+import MoviePoster from './components/MoviePoster.js'
+import MoviePage from './components/MoviePage.js'
 import Profile from './Profile';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 
 function App() {
   return (
@@ -12,6 +16,9 @@ function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route exact path="/" component={LoginPage} />
+          <Route exact path = "/home" component = {Home} />
+          {/* <Route exact path = "/movie" component = {MoviePoster} /> */}
+          <Route exact path="/movies/:movieId" component={MoviePage} />
           <Route exact path="/profile" component={Profile} />
         </Switch>
     </Router>
