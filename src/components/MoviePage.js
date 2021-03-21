@@ -32,6 +32,7 @@ class MoviePage extends React.Component {
             backgroundImage : 'url(' + image_background + ')'
         };
         console.log(this.state.ratings);
+        console.log(this.state.movieDetails.poster_path);
         return (
             <>
             {/* <p>{this.state.movieDetails.original_title}</p> */}
@@ -42,7 +43,7 @@ class MoviePage extends React.Component {
                         <img src={movieposter} alt={title}/>
                     </div> */}
                     <div className="poster">
-                        <img src={"http://image.tmdb.org/t/p/w780/"+this.state.movieDetails.poster_path} alt ="this.state.movieDetails.title"/>
+                        <img src={"https://image.tmdb.org/t/p/w780"+this.state.movieDetails.poster_path} alt ="this.state.movieDetails.title"/>
                     </div>
                     <div className="description-movie">
                         <p className="title-movie">{this.state.movieDetails.original_title}</p>
