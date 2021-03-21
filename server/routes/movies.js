@@ -63,8 +63,8 @@ router.get('/ratingandreview/:movieId', (req, res) => {
     });
 });
 
-router.get('/search/', (req, res) => {
-    const movieTitle = req.body.movie_title;
+router.get('/search/:movie_title', (req, res) => {
+    const movieTitle = req.params.movie_title;
     Movie.find({'original_title': {'$regex': `.*${movieTitle}.*`, '$options' : 'i'}})
     .then(movies => {
         res.status(200).send(movies);

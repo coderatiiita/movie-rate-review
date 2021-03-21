@@ -69,16 +69,7 @@ class MoviePage extends React.Component {
                 </div>
                 <Review movieId={this.props.match.params.movieId}/>
             </div>
-
-
             </>
-
-
-
-        
-
-
-
         );
 
     }
