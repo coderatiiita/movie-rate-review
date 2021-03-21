@@ -57,8 +57,8 @@ class LoginPage extends React.Component {
       <div className="LoginMain">
         <p className="spanStyle">Movie Rating </p>
         <form className="formStyle">
-          <input className="InputStyle" placeholder="email" name="email" required type="email" onInput={this.onInput} value={this.state.email}></input>
-          <input className="InputStyle" placeholder="password" name="password" required type="password" onInput={this.onInput} value={this.state.password}></input>
+          <input className="InputStyle" placeholder="Email" name="email" required type="email" onInput={this.onInput} value={this.state.email}></input>
+          <input className="InputStyle" placeholder="Password" name="password" required type="password" onInput={this.onInput} value={this.state.password}></input>
           <div className="buttonDiv">
             <input className="inputButton" type="submit" onClick={this.onLoginClick} value="Login"></input>
             <input className="inputButton" type="submit" onClick={this.onSignupClick} value="Sign up"></input>

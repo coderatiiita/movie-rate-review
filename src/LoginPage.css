@@ -7,6 +7,7 @@
     width: 80%;
     margin:auto;
     margin-top:5%;
+    /* border-radius: 2vh; */
 }
 .formStyle{
 
@@ -23,6 +24,8 @@
     text-align: center;
     margin:auto;
     width:97%;
+    color: gold;
+    font-weight: bold;
 }
 .InputStyle{
     width:100%;
@@ -34,13 +37,44 @@
   flex-direction: row;
   justify-content: space-evenly;
   width: 100%;  
+  margin-top: 3vh;
 }
 .inputButton{
     color:#22254b;
     padding:10px;
     padding-left:15px;
     padding-right:15px;
+    background-color: gold;
+    border-radius: 1vh;
+    width: 20vh;
+    height: 8vh;
+    color: black;
+    font-size: 2.5vh;
+    font-weight: bold;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    letter-spacing: 1px;
 }
+
+.inputButton:hover {
+    background-color: red;
+    box-shadow: 0px 15px 20px rgba(201, 101, 34, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+
+  @media only screen and (max-width: 600px) {
+    .inputButton{
+        width: 15vh;
+        height: 5vh;
+        color: black;
+        font-size: 2vh;
+    }
+}
+
+
 
 @media only screen and (max-width: 600px) {
     .spanStyle{
