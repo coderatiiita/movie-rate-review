@@ -62,7 +62,7 @@ class MoviePage extends React.Component {
                     </div>
                 </div>
                 <div>
-                    <p className="review-header">{this.state.ratings.length>0?"REVIEWS":"ADD A REVIEW"}</p>
+                    <p className="review-header">{this.state.ratings.length>0?"REVIEWS":""}</p>
                 </div>
                 <div className="feedback-main-conatiner">
                     {this.state.ratings.length>0 && this.state.ratings.map(feedback =>(<Feedback key={feedback.id} feedback={feedback}  />))}
