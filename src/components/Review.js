@@ -27,6 +27,7 @@ class Review extends React.Component {
     const { review, rating, movieId } = this.state;
     fetch('/api/users/me').then(user => {
       if (user.status !== 200) {
+        alert('Login to rate any movie');
         window.location = '/login';
         console.log(user);
       }
@@ -42,6 +43,7 @@ class Review extends React.Component {
         }).then(res=>{
           if(res.status===201){
             window.location="/movies/"+this.state.movieId;
+            alert('Your review for this movie will get updated');
           }
         })
     })

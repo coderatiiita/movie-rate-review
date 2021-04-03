@@ -17,7 +17,7 @@ const Movie = ({title,poster_path,overview,vote_average,_id}) => {
     let history = useHistory();
     return (
     <div className="movie">
-        <img src={IMG_API + poster_path} alt={title}  onClick={()=>history.push("/movies/"+_id)}/>
+        <img src={IMG_API + poster_path} alt={title}  onClick={()=>history.push("/movies/"+_id)} title="Click To Add Review"/>
         <div className="movie-info">
             <h3>{title}</h3>
             <span className={`tag ${setVoteClass(vote_average)}`}>
