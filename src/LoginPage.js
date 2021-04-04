@@ -55,7 +55,7 @@ class LoginPage extends React.Component {
   render() {
     return (
       <div className="LoginMain">
-        <p className="spanStyle">Movie Rating </p>
+        <p className="spanStyle">Sign In To Submit Reviews  </p>
         <form className="formStyle">
           <input className="InputStyle" placeholder="Email" name="email" required type="email" onInput={this.onInput} value={this.state.email}></input>
           <input className="InputStyle" placeholder="Password" name="password" required type="password" onInput={this.onInput} value={this.state.password}></input>
